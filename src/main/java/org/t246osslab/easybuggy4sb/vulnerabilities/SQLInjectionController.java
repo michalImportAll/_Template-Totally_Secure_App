@@ -27,7 +27,7 @@ public class SQLInjectionController extends AbstractController {
 	private JdbcTemplate jdbcTemplate;
 
 	@RequestMapping(value = Config.APP_ROOT + "/sqlijc")
-    public ModelAndView process(@RequestParam(value = "name", required = false) String name,
+   /** public ModelAndView process(@RequestParam(value = "name", required = false) String name,
             @RequestParam(value = "password", required = false) String password, ModelAndView mav,
             HttpServletRequest req, Locale locale) {
 	    setViewAndCommonObjects(mav, locale, "sqlijc");
@@ -52,7 +52,7 @@ public class SQLInjectionController extends AbstractController {
         }
 		return mav;
 	}
-
+*/
 	private List<User> selectUsers(String name, String password) {
 		//* Start SQLi Section
 		String sql = "SELECT  name, secret from USERS where name='"+ name + "' or password='"+ password + "'" ;
